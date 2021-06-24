@@ -17,8 +17,7 @@ int main(){
 	return 0;
 }
 int DDA() {
-        /* request auto detection */
-        int gdriver = DETECT, gmode, err;
+              int gdriver = DETECT, gmode, err;
         float i, x1, y1, x2, y2, x3, y3,x4,y4, x5, y5, dx, dy, steps;
         float x, y, xincr, yincr;
         
@@ -27,7 +26,7 @@ int DDA() {
 	 	printf ("Cordenadas final de la base: ");
 		scanf("%f%f",&x2,&y2);
 
-        /* initialize graphic mode */
+        
         initgraph(&gdriver, &gmode, "C:/TURBOC3/BGI");
 
         err = graphresult();
@@ -40,8 +39,7 @@ int DDA() {
                 return 0;
         }
 
-        /* draw line from (0, 0) to x-axis & y-axis maximum */
-        
+                
         dx = x2 - x1;
         printf("dx: %f", dx);
         printf("\n");
@@ -71,7 +69,7 @@ int DDA() {
         
          printf("LADO 1" );
 
-        /* find the x and y successors and plot the pixels */
+        
         for (i = 0; i < steps; i++) {
         	printf("\n");
             x = x + xincr;
@@ -122,11 +120,7 @@ int DDA() {
                  
                  
 
-                /* put a pixel at the given postion(x, y) */
-                //putpixel((int) x, (int) y, WHITE);
-
-        /* deallocate memory allocated fro graphic screen */
-        getchar();
+                        getchar();
 		getchar();
         closegraph();
         
@@ -136,7 +130,7 @@ int DDA() {
   
   
 int BRE() {
-        /* request auto detection */
+       
         int gdriver = DETECT, gmode;
        	float x1 , y1 , x2, y2, x3, y3, x4,y4, x5, y5, x6, y6,xx, yy;
         float err, x, y, dx, dy, dp, xEnd, p;
@@ -147,18 +141,17 @@ int BRE() {
 	 	printf ("Cordenadas final de la base :");
 		scanf("%f%f",&x2,&y2);
 
-        /* initialize graphic driver */
+        
         initgraph(&gdriver, &gmode, "C:/TURBOC3/BGI");
         err = graphresult();
 
         if (err != grOk) {
-                /* error occurred */
-                printf("Graphics Error: %s\n",
+                                printf("Graphics Error: %s\n",
                                 grapherrormsg(err));
                 return 0;
         }
 
-        /* draws line from (0, 0) to (x2, y2) */
+        
         dx = x2 - x1;
         dy = y2 - y1;
 
@@ -177,10 +170,10 @@ int BRE() {
         x4 = x2, y4 = x2;
         x5 = x1 ,y5 = x2;
 
-        /* put a dot at the position (x, y) */
+        
         putpixel(x, y, WHITE);
 
-        /* calculate x and y successor and plot the points */	printf("\n");
+        	printf("\n");
         			printf("LADO 1" );
         			printf("\n");
         
@@ -196,8 +189,7 @@ int BRE() {
                          printf("Y: %f", y);	
                         printf("\n");
                 }
-                /* put a dot at the given position(x, y) */
-        }
+                        }
          if (x>=x2&&y>=y2){
                  	printf("\n");
         			printf("LADO 2" );
@@ -214,7 +206,7 @@ int BRE() {
                          printf("x2: %f", x2);	
                         printf("\n");
                 }
-                /* put a dot at the given position(x, y) */
+                
         }
     }
     
@@ -234,8 +226,7 @@ int BRE() {
                          printf("x4: %f", y4);	
                         printf("\n");
                 }
-                /* put a dot at the given position(x, y) */
-        }
+                        }
     }
     
     if (x4==x5&&y4==y5){
@@ -254,7 +245,7 @@ int BRE() {
                          printf("x5: %f", x5);	
                         printf("\n");
                 }
-                /* put a dot at the given position(x, y) */
+                
         }
     }
 		            		
@@ -262,7 +253,7 @@ int BRE() {
 
         getch();
 
-        /* deallocate memory allocated for graphic screen */
+        
         getchar();
 		getchar();
         closegraph();
